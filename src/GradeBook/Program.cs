@@ -1,23 +1,18 @@
-﻿using System;
-using System.Collections.Generic;
-
-namespace GradeBook
+﻿namespace GradeBook
 {
-    class Program
+  class Program
+  {
+    static void Main(string[] args)
     {
-        static void Main(string[] args)
-        {
-            List<double> grades = new List<double>() { 12.9, 2.5, 10, 7.9};
-            grades.Add(10.8);
-            
-            double result = 0.0;
-
-            foreach(double number in grades) {
-                result += number;
-            }
-
-            double average = result / grades.Count;
-            Console.WriteLine($"The average grade is {average:N4}");
-        }
+      Book book = new Book("Class Four");
+      book.AddGrade(12.23);
+      book.AddGrade(12.9);
+      book.AddGrade(2.5);
+      book.AddGrade(10);
+      book.AddGrade(7.9);
+      book.AddGrade(10.8);
+      // statistics 
+      book.showStatistics();
     }
+  }
 }
